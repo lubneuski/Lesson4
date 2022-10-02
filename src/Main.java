@@ -9,12 +9,11 @@ public class Main {
         task1();
         task2();
         task3();
-//        task5();
+//        task4();
+        task5();
 //        task6();
 //        task7();
-//        task8();
-//        task9();
-//        task10();
+
         scanner.close();
       }
 
@@ -89,34 +88,67 @@ public class Main {
         System.out.println("\nЗадание 3. Сравните 2 массива.");
 
         int[] massiv3 = new int[5];
-           for (int i = 0; i < 5; i++) {massiv3[i] = (int) (Math.random()*100)+1;}
+        for (int i = 0; i < 5; i++) {
+            massiv3[i] = (int) (Math.random() * 100) + 1;
+        }
         System.out.println(Arrays.toString(massiv3));
         int[] massiv33 = new int[5];
-           for (int i = 0; i < 5; i++) {massiv33[i] = (int) (Math.random()*100)+1;}
+        for (int i = 0; i < 5; i++) {
+            massiv33[i] = (int) (Math.random() * 100) + 1;
+        }
         System.out.println(Arrays.toString(massiv33));
 
         int sum3 = 0;
-        for ( int x: massiv3) {
-            sum3 += x;}
-        System.out.println("Среднее арифметическое чисел равно: " + sum3/massiv3.length);
+        for (int x : massiv3) {
+            sum3 += x;
+        }
+        System.out.println("Среднее арифметическое чисел равно: " + sum3 / massiv3.length);
 
         int sum33 = 0;
-        for ( int y: massiv33) {
-            sum33 += y;}
-        System.out.println("Среднее арифметическое чисел равно: " + sum33/massiv33.length);
+        for (int y : massiv33) {
+            sum33 += y;
+        }
+        System.out.println("Среднее арифметическое чисел равно: " + sum33 / massiv33.length);
 
-        if (sum3>sum33){System.out.println("Среднее арифметическое чисел массива 1 больше.");}
-            else if (sum3<sum33) {System.out.println("Среднее арифметическое чисел массива 2 больше.");}
-            else {System.out.println("Среднее арифметическое чисел массива 1 и 2 равны.");}
-
-
-
-
-
-
-
-
-
+        if (sum3 > sum33) {
+            System.out.println("Среднее арифметическое чисел массива 1 больше.");
+        } else if (sum3 < sum33) {
+            System.out.println("Среднее арифметическое чисел массива 2 больше.");
+        } else {
+            System.out.println("Среднее арифметическое чисел массива 1 и 2 равны.");
+        }
     }
-}
 
+
+        private static void task5() {
+//  Задание 5. Создайте массив и заполните массив. Выведите массив на экран в строку.
+//  Замените каждый элемент с нечётным индексом на ноль. Снова выведете массив на экран на отдельной строке.
+            System.out.println("\nЗадание 5. Заменить каждый элемент массива с нечётным индексом на ноль.");
+
+            System.out.println("Введите размер массива:");
+            int n = scanner.nextInt();
+            int[] massiv5 = new int[n];
+            for (int i = 0; i < n; i++) {
+                massiv5[i] = (int) (Math.random() * 100) + 1;}
+            Arrays.sort(massiv5);
+            System.out.println(Arrays.toString(massiv5));
+
+               int[] massiv55=new int[massiv5.length];
+            for (int j = 0; j < massiv5.length; j++) {
+                if (j % 2 != 0) {System.arraycopy(massiv5, 0, massiv55, 0, massiv5.length);
+  //                  massiv55[j] = 0;    // если закоментить эту строчку, то
+                                        //не записывает "0" в последний не четный индекс massiv55.
+
+                    massiv5[j] = 0;   //а если закоментить эту, то "0" записывает только в последний
+                                        //не четный индекс massiv55.
+                }
+            }
+            System.out.println(Arrays.toString(massiv5));
+            System.out.println(Arrays.toString(massiv55));
+
+
+
+
+
+        }
+}
